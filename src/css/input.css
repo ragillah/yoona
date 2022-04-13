@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-fixed {
+   @apply fixed z-[9999] bg-white bg-opacity-70 shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.2)] backdrop-blur-[5px] dark:bg-dark dark:bg-opacity-60;
+}
+
+.toggler-line {
+   @apply my-2 block h-[2px] w-[30px] bg-dark dark:bg-white;
+}
+
+.toggler-active > span:nth-child(1) {
+   @apply rotate-45;
+}
+
+.toggler-active > span:nth-child(2) {
+   @apply scale-0;
+}
+
+.toggler-active > span:nth-child(3) {
+   @apply -rotate-45;
+}
+
+.nav-link {
+   @apply mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white sm:mx-6;
+}
+
+.scale-img {
+   @apply transition duration-500 ease-linear group-hover:scale-110;
+}
+
+input:checked + .slider::before {
+   @apply translate-x-7;
+}
+
+input + .slider.round::before {
+   @apply flex items-center justify-center bg-transparent text-base content-['🌞'];
+}
+input:checked + .slider.round::before {
+   @apply flex items-center justify-center bg-transparent text-base content-['🌙'];
+}
+
+.social-media-icon-lg {
+   @apply mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-slate-400 text-slate-400 hover:border-primary hover:bg-primary hover:text-white;
+}
+
+.social-media-icon-sm {
+   @apply mr-3 text-slate-400 hover:text-primary;
+}
+
+.social-media-icon-sm svg,
+.social-media-icon-lg svg {
+   @apply fill-current;
+}
